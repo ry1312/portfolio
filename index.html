@@ -1,0 +1,668 @@
+<!DOCTYPE html>
+<html lang="ja">
+    <head>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width,initial-scale=1" />
+        <title>石井花壇 | 温海温泉旅館【公式サイト】</title>
+        <meta name="description" content="日本古来の素材と現代的表現を併せ持つ温泉旅館、石井花壇。 伝統的「和」の息づく空間で、至極のひとときをお過ごしください。" />
+        <meta name="format-detection" content="telephone=no" />
+
+        <!-- favicon/webclipicon -->
+        <link rel="icon" href="favicon.ico" />
+        <link rel="icon" href="./img/logo/logo01.svg" type="image/svg+xml">
+        <link rel="apple-touch-icon" href="./img/logo/logo01@2x.png" />
+
+        <!-- ogp -->
+        <meta property="og:site_name" content="石井花壇 | 温海温泉旅館【公式サイト】" />
+        <meta property="og:url" content="https://perfectkittycatpessy.com" />
+        <meta property="og:type" content="website" />
+        <meta property="og:title" content="日本古来の素材と現代的表現を併せ持つ温泉旅館、石井花壇。 伝統的「和」の息づく空間で、至極のひとときをお過ごしください。" />
+        <meta property="og:description" content="日本古来の素材と現代的表現を併せ持つ温泉旅館、石井花壇。 伝統的「和」の息づく空間で、至極のひとときをお過ごしください。" />
+        <meta property="og:image" content="URL" />
+        <meta property="og:locale" content="ja_JP" />
+        <!-- <meta property="fb:app_id" content="AppID"> -->
+        <meta name="twitter:card" content="summary" />
+        <meta name="twitter:site" content="@samenekotanuki" />
+        <meta name="twitter:description" content="ページの説明" />
+        <meta name="twitter:image:src" content="URL" />
+        
+        <!-- reset-css yahoo -->
+        <link rel = "stylesheet" type = "text / css" href = "http://yui.yahooapis.com/3.18.1/build/cssreset/cssreset-min.css" >
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/flatpickr/dist/flatpickr.min.css">
+        <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css" />
+        <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+        <!-- css -->
+        <link rel="stylesheet" href="./css/style.css" />
+        <!-- 場合によって必要 -->
+        <meta name="robots" content="noindex">
+    </head>
+    <body>
+        <header class="header">
+            <div class="header-inner">
+                <h1 class="header-logo">
+                    <a href="#" class="header-logo-link">
+                        石井花壇
+                    </a>
+                    <!-- /.header-logo__link -->
+                </h1>
+                <!-- /.header-logo -->
+                <nav class="header-nav">
+                    <ul class="header-nav-list">
+                        <li class="header-nav-item"><a href="./room/index.html" class="header-nav-item-link">お部屋</a></li>
+                        <li class="header-nav-item"><a href="./menu/index.html" class="header-nav-item-link">お料理</a></li>
+                        <li class="header-nav-item"><a href="./onsen/index.html" class="header-nav-item-link">温泉</a></li>
+                    </ul>
+                    <!-- /.header-nav-list -->
+                </nav>
+                <!-- /.header-nav -->
+                <button type="button" id="js-hamburger" class="hamburger-btn hamburger" aria-controls="js-glabal-menu" aria-expanded="false" area-label="メニューを開閉する">
+                    <span class="hamburger-line"></span>
+                </button>
+                <div class="sp-global-menu" id="js-global-menu" area-hidden="true">
+                    <nav class="hamburger-nav">
+                        <ul class="hamburger-nav-list">
+                            <li class="hamburger-nav-item"><a href="./room/index.html" class="hamburger-nav-item-link">お部屋</a></li>
+                            <li class="hamburger-nav-item"><a href="./menu/index.html" class="hamburger-nav-item-link">お料理</a></li>
+                            <li class="hamburger-nav-item"><a href="./onsen/index.html" class="hamburger-nav-item-link">温泉</a></li>
+                        </ul>
+                    </nav>
+                </div><!-- /.sp-header-menu -->
+
+                <button id="open-modal">
+                    <div class="modal-btn-img">
+                        <img src="./img/calender@2x.png" alt="">
+                    </div><!-- /.modal-btn-img -->
+                    <div class="modal-btn-text">
+                        宿泊予約
+                    </div><!-- /.modal-btn-text -->
+                </button>
+            </div>
+            <!-- /.header__inner -->
+        </header>
+        <!-- /.header -->
+        <!-- カレンダーモーダル -->
+
+        <!-- モーダルエリアここから -->
+        <section id="modal-area" class="modal-area">
+        <div id="modal-bg" class="modal-bg"></div>
+        <div class="modal-wrapper">
+            <div class="modal-contents">
+                <h2 class="modal-title">
+                    宿泊予約
+                </h2><!-- /.reservation-title -->
+                <form id="js-form" action="" class="contact-form">
+                    <dl class="contact-list">
+                        <div class="contact-item">
+                            <dt class="contact-item-title">
+                                お名前
+                            </dt>
+                            <dd class="contact-item-input">
+                                <input type="text" placeholder="例：石井正悟"  required>
+                            </dd>
+                        </div>
+                        <div class="contact-item">
+                            <dt class="contact-item-title">
+                                メールアドレス
+                            </dt>
+                            <dd class="contact-item-input">
+                                <input type="email" placeholder="例：Example@example.com" required>
+                            </dd> 
+                        </div>
+                        <div class="contact-item">
+                            <dt class="contact-item-title">
+                                ご希望プラン（空いているプランのみ表示されます）
+                            </dt>
+                            <dd class="contact-item-input">
+                                <select class="contact-select">
+                                    <option value="" class="contact-option">プランを選択してください</option><!-- /.contact-option -->
+                                    <option value="" class="contact-option">【期間限定】海辺の四季旬彩、贅沢美味懐石プラン</option><!-- /.contact-option -->
+                                    <option value="" class="contact-option">平日に優雅に楽しむ、特別宿泊プラン</option><!-- /.contact-option -->
+                                    <option value="" class="contact-option">絶景貸切露天と個室会席を満喫できるファミリープラン</option><!-- /.contact-option -->
+                                </select><!-- /#.contact-select -->
+                            </dd> 
+                        </div> 
+                        <div class="contact-item contact-item-last-child">
+                            <dt class="contact-item-title">
+                                日時選択
+                            </dt>
+                            <dd class="contact-item-input">
+                                <input type="text" id="flatpickr" placeholder="日時を選択してください" >
+                            </dd> 
+                        </div>
+                        <div class="contact-footer-submit">
+                        <input class="submit-btn" type="submit" id="js-submit" disabled value="送信する">
+                        </div>
+                    </dl>
+                </form>
+            </div>
+            <div id="close-modal" class="close-modal">
+                <img src="./img/close@2x.png" alt="閉じるボタン">
+            </div>
+        </div>
+        </section>
+
+
+        <main class="main">
+            <!-- Slider main container -->
+            <div class="swiper-container">
+                <!-- Additional required wrapper -->
+                <div class="swiper-wrapper">
+                <!-- Slides -->
+                <div class="swiper-slide">
+                    <section class="first-view">
+                        <div class="inner first-view-inner">
+                            <div class="slide-img slide-img01">
+                            </div><!-- /.slide-img -->
+                            <div class="first-view-catch-wrap">
+                                <h2 class="first-view-catch">
+                                    頑 張 る 人 の
+                                </h2>
+                                <h2 class="first-view-catch">
+                                    頑 張 ら な い 時 間
+                                </h2>
+                            </div>
+                            <!-- /.first-view-catch-wrap -->
+                        </div>
+                        <!-- /.inner -->
+                    </section>
+                    <!-- /.first-view -->
+                </div>
+                <div class="swiper-slide">
+                    <section class="first-view">
+                        <div class="inner first-view-inner">
+                            <div class="slide-img slide-img02">
+                            </div><!-- /.slide-img -->
+                            <div class="first-view-catch-wrap">
+                                <h2 class="first-view-catch">
+                                    頑 張 る 人 の
+                                </h2>
+                                <h2 class="first-view-catch">
+                                    頑 張 ら な い 時 間
+                                </h2>
+                            </div>
+                            <!-- /.first-view-catch-wrap -->
+                        </div>
+                        <!-- /.inner -->
+                    </section>
+                    <!-- /.first-view -->
+                </div>
+                <div class="swiper-slide">
+                    <section class="first-view">
+                        <div class="inner first-view-inner">
+                            <div class="slide-img slide-img03">
+                            </div><!-- /.slide-img -->
+                            <div class="first-view-catch-wrap">
+                                <h2 class="first-view-catch">
+                                    頑 張 る 人 の
+                                </h2>
+                                <h2 class="first-view-catch">
+                                    頑 張 ら な い 時 間
+                                </h2>
+                            </div>
+                            <!-- /.first-view-catch-wrap -->
+                        </div>
+                        <!-- /.inner -->
+                    </section>
+                    <!-- /.first-view -->
+                </div>
+                </div>
+            </div>
+            <section class="concept">
+                <div class="inner concept-inner">
+                    <div class="concept-body"  data-aos="fade-up" data-aos-duration="2000">
+                        <h2 class="concept-title concept-title01">温 海 温 泉 の</h2>
+                        <h2 class="concept-title concept-title02">美 し さ に 癒 や さ れ て</h2>
+                        <div class="concept-text-container">
+                            <p class="concept-text">
+                                東 北 の 奥 座 敷 で あ る 温 海 温 泉 郷 </p>
+                            <!-- /.concept-text -->
+                            <p class="concept-text">
+                                開 湯 は 約 <span class="concept-year">1300</span>年 前 と さ れ 、 役 小 角 が
+                            </p>
+                            <!-- /.concept-text -->
+                            <p class="concept-text" >
+                                発 見 し た と 伝 え ら れ ま す
+                            </p>
+                            <!-- /.concept-text -->
+                        </div>
+                        <!-- /.concept-text-container -->
+                        <div class="concept-text-container">
+                            <p class="concept-text">
+                                石 井 花 壇 は 江 戸 よ り 続 く 由 緒 あ る 旅 館 で
+                            </p>
+                            <!-- /.concept-text -->
+                            <p class="concept-text">
+                                ク ラ シ ッ ク な 作 り の 中 に 大 正 ロ マ ン あ ふ れ る
+                            </p>
+                            <!-- /.concept-text -->
+                            <p class="concept-text">
+                                内 装 を 残 し て お り ま す
+                            </p>
+                            <!-- /.concept-text -->
+                        </div>
+                        <!-- /.concept-text-container -->
+                        <div class="concept-text-container">
+                            <p class="concept-text">
+                                圧 倒 的 癒 や し の 空 間 で
+                            </p>
+                            <!-- /.concept-text -->
+                            <p class="concept-text">
+                                頑 張 る 現 代 人 に
+                            </p>
+                            <!-- /.concept-text -->
+                            <p class="concept-text">
+                                頑 張 ら な い 圧 倒 的 な 非 日 常 を ご 提 供 し ま す
+                            </p>
+                            <!-- /.concept-text -->
+                        </div>
+                        <!-- /.concept-text-container -->
+                        <div class="concept-name">
+                            石 井 花 壇
+                        </div>
+                        <!-- /.concept-name -->
+                    </div>
+                    <!-- /.concept-body -->
+                </div>
+                <!-- /.inner concept-inner -->
+            </section>
+            <!-- /.concept -->
+            <section class="about">
+                <ul class="about-list">
+                    <li class="about-item">
+                        <div class="about-img"  data-aos="fade-up" data-aos-duration="2000">
+                            <img src="./img/oheya-top@2x.jpg" alt="">
+                        </div><!-- /.about-img -->
+                        <div class="about-body"  data-aos="fade-up" data-aos-duration="2000">
+                            <h2 class="about-title">
+                                喧騒から離れた空間 <br>
+                                心落ち着く至極のひととき
+                            </h2><!-- /.about-title -->
+                            <p class="about-text about-text01">
+                                まるで時が止まったかのような、圧倒的な静寂のなかで、 <br>
+                                ひたすらにゆったりと…。 <br>
+                                最高級の「何もしない時間」をお過ごしください。
+                            </p><!-- /.about-text -->
+                            <a href="./room/index.html" class="about-btn">お部屋について</a><!-- /.btn -->
+                        </div><!-- /.about-body -->
+                    </li><!-- /.about-item -->
+                    <li class="about-item about-item-reverse">
+                        <div class="about-img about-img-reverse"  data-aos="fade-up" data-aos-duration="2000">
+                            <img src="./img/menu-top@2x.jpg" alt="">
+                        </div><!-- /.about-img -->
+                        <div class="about-body"  data-aos="fade-up" data-aos-duration="2000">
+                            <h2 class="about-title">
+                                出迎えるのは <br>
+                                極上の温海料理
+                            </h2><!-- /.about-title -->
+                            <p class="about-text about-text02">
+                                最も旬の食材を愉しむ、最高の贅沢を <br>
+                                最高級A5ランクの米沢牛と共に頂く。 <br>
+                                あなたの人生史に残る「極上の感動」を <br>
+                                お約束します。
+                            </p><!-- /.about-text -->
+                            <a href="./menu/index.html" class="about-btn">料理について</a><!-- /.btn -->
+                        </div><!-- /.about-body -->
+                    </li><!-- /.about-item -->
+                    <li class="about-item">
+                        <div class="about-img"  data-aos="fade-up" data-aos-duration="2000">
+                            <img src="./img/onsen-top@2x.jpg" alt="">
+                        </div><!-- /.about-img -->
+                        <div class="about-body"  data-aos="fade-up" data-aos-duration="2000">
+                            <h2 class="about-title">
+                                疲れ切った身体にやすらぎを <br>
+                                温海の源泉に癒やされて
+                            </h2><!-- /.about-title -->
+                            <p class="about-text about-text03">
+                                古くは弘法大師の病をも治療したと言われる熱海の泉質。 <br>
+                                現代人の疲弊しきった身体を修復する最高級の湯治場として <br>
+                                ご活用ください。
+                            </p><!-- /.about-text -->
+                            <a href="./onsen/index.html" class="about-btn">温泉について</a><!-- /.btn -->
+                        </div><!-- /.about-body -->
+                    </li><!-- /.about-item -->
+                </ul><!-- /.about-list -->
+            </section>
+            <!-- /.about -->
+            <section class="plan">
+                <div class="inner plan-inner">
+                    <div class="section-head-wrap plan-head-wrap">
+                        <div class="section-head-img">
+                            <img src="./img/logo02@2x.png" alt="">
+                        </div><!-- /.section-head-img -->
+                        <h2 class="section-head">おすすめご宿泊プラン</h2><!-- /.section-head -->
+                    </div><!-- /.section-head-wrap -->
+                    <ul class="plan-list">
+                        <li class="plan-item"  data-aos="fade-up" data-aos-duration="2000">
+                            <div class="plan-item-img">
+                                <img src="./img/recommended01@2x.jpg" alt="">
+                            </div><!-- /.plan-item-img -->
+                            <div class="plan-item-body">
+                                <h3 class="plan-item-title">
+                                    朝食付きプラン、日本近海で取れた <br class="is-pc">
+                                    のどぐろを朝食として…</h3><!-- /.plan-item-title -->
+                                <p class="plan-item-text">
+                                    最高級と称されるのどぐろ、正式には「アカ <br class="is-pc">
+                                    ムツ」と呼ばれる魚、味は独特の上品な味わ <br class="is-pc">
+                                    いで、焼いても煮ても美味
+                                </p><!-- /.plan-item-text -->
+                            </div><!-- /.plan-item-body -->
+                        </li><!-- /.plan-item -->
+                        <li class="plan-item"  data-aos="fade-up" data-aos-duration="2000">
+                            <div class="plan-item-img">
+                                <img src="./img/recommended02@2x.jpg" alt="">
+                            </div><!-- /.plan-item-img -->
+                            <div class="plan-item-body">
+                                <h3 class="plan-item-title">
+                                    【期間限定】熱海蟹をたっぷりと <br class="is-pc">
+                                    愉しむプラン。
+                                </h3><!-- /.plan-item-title -->
+                                <p class="plan-item-text">
+                                    温海で水揚げされた蟹は「温海蟹」 <br class="is-pc">
+                                    として知られ、嗜好品として愛されて <br class="is-pc">
+                                    きました。この宿泊プランでは存分に
+                                </p><!-- /.plan-item-text -->
+                            </div><!-- /.plan-item-body -->
+                        </li><!-- /.plan-item -->
+                        <li class="plan-item"  data-aos="fade-up" data-aos-duration="2000">
+                            <div class="plan-item-img">
+                                <img src="./img/recommended03@2x.jpg" alt="">
+                            </div><!-- /.plan-item-img -->
+                            <div class="plan-item-body">
+                                <h3 class="plan-item-title">
+                                    【平日限定】贅沢美味懐石プラン。 <br class="is-pc">
+                                    海辺の四季旬彩プラン。
+                                </h3><!-- /.plan-item-title -->
+                                <p class="plan-item-text">
+                                    熱海近海で取れた魚を鮮度そのままに舟盛りに <br class="is-pc">
+                                    してご提供。生きた味をお楽しみください。
+                                </p><!-- /.plan-item-text -->
+                            </div><!-- /.plan-item-body -->
+                        </li><!-- /.plan-item -->
+                    </ul><!-- /.plan-list -->
+                </div><!-- /.inner plan-inner -->
+            </section><!-- /.plan -->
+            <section class="news">
+                <div class="inner">
+                    <div class="section-head-wrap news-head-wrap">
+                        <div class="section-head-img">
+                            <img src="./img/logo02@2x.png" alt="">
+                        </div><!-- /.section-head-img -->
+                        <h2 class="section-head">お知らせ</h2><!-- /.section-head -->
+                    </div><!-- /.section-head-wrap -->
+
+                    <ul class="news-tab-menu">
+                        <li class="news-tab-menu__item"><span class="tab-trigger js-tab-trigger is-active" data-id="tab01">営業情報</span></li>
+                        <li class="news-tab-menu__item"><span class="tab-trigger js-tab-trigger" data-id="tab02">その他</span></li>
+                    </ul><!-- .tab-menu -->
+                    
+                    <div class="news-news-tab-content">
+                        <!-- tab1 -->
+                        <div class="news-tab-content__item js-tab-target is-active" id="tab01">
+                            <ul class="news-list"  data-aos="fade-up" data-aos-duration="2000">
+                                <li class="news-item">
+                                    <a href="#!" class="news-item-link">
+                                        <div class="news-item-img">
+                                            <img src="./img/news01@2x.jpg" alt="">
+                                        </div><!-- /.news-item-img -->
+                                        <div class="news-item-body">
+                                            <time datetime="2020-12-24">2020.12.24</time>
+                                            <h3 class="news-item-text">
+                                                年末最後の営業日は27日になります。
+                                            </h3><!-- /.news-item-text -->
+                                        </div><!-- /.news-item-body -->
+                                    </a><!-- /.news-item-link -->
+                                </li><!-- /.news-item -->
+                                <li class="news-item">
+                                    <a href="#!" class="news-item-link">
+                                        <div class="news-item-img">
+                                            <img src="./img/news02@2x.jpg" alt="">
+                                        </div><!-- /.news-item-img -->
+                                        <div class="news-item-body">
+                                            <time datetime="2020-12-24">2020.12.24</time>
+                                            <h3 class="news-item-text">
+                                                年末最後の営業日のお知らせ
+                                            </h3><!-- /.news-item-text -->
+                                        </div><!-- /.news-item-body -->
+                                    </a><!-- /.news-item-link -->
+                                </li><!-- /.news-item -->
+                                <li class="news-item">
+                                    <a href="#!" class="news-item-link">
+                                        <div class="news-item-img">
+                                            <img src="./img/news02@2x.jpg" alt="">
+                                        </div><!-- /.news-item-img -->
+                                        <div class="news-item-body">
+                                            <time datetime="2020-12-11">2020.12.11</time>
+                                            <h3 class="news-item-text">
+                                                12.21は臨時休業とさせていただきますので、よろしく お願いします。
+                                            </h3><!-- /.news-item-text -->
+                                        </div><!-- /.news-item-body -->
+                                    </a><!-- /.news-item-link -->
+                                </li><!-- /.news-item -->
+                                <li class="news-item">
+                                    <a href="#!" class="news-item-link">
+                                        <div class="news-item-img">
+                                            <img src="./img/news01@2x.jpg" alt="">
+                                        </div><!-- /.news-item-img -->
+                                        <div class="news-item-body">
+                                            <time datetime="2020-12-24">2020.12.24</time>
+                                            <h3 class="news-item-text">
+                                                年末最後の営業日のお知らせ
+                                            </h3><!-- /.news-item-text -->
+                                        </div><!-- /.news-item-body -->
+                                    </a><!-- /.news-item-link -->
+                                </li><!-- /.news-item -->
+                                <li class="news-item">
+                                    <a href="#!" class="news-item-link">
+                                        <div class="news-item-img">
+                                            <img src="./img/news01@2x.jpg" alt="">
+                                        </div><!-- /.news-item-img -->
+                                        <div class="news-item-body">
+                                            <time datetime="2020-12-1">2020.12.01</time>
+                                            <h3 class="news-item-text">
+                                                和室の改装を行いますため、12.10はお休み させていただきます。
+                                            </h3><!-- /.news-item-text -->
+                                        </div><!-- /.news-item-body -->
+                                    </a><!-- /.news-item-link -->
+                                </li><!-- /.news-item -->
+                                <li class="news-item">
+                                    <a href="#!" class="news-item-link">
+                                        <div class="news-item-img">
+                                            <img src="./img/news02@2x.jpg" alt="">
+                                        </div><!-- /.news-item-img -->
+                                        <div class="news-item-body">
+                                            <time datetime="2020-12-24">2020.12.24</time>
+                                            <h3 class="news-item-text">
+                                                年末最後の営業日のお知らせ
+                                            </h3><!-- /.news-item-text -->
+                                        </div><!-- /.news-item-body -->
+                                    </a><!-- /.news-item-link -->
+                                </li><!-- /.news-item -->
+                            </ul><!-- /.news-list -->
+                        </div><!-- .tab-content__item -->
+
+                        <!-- tab2 -->
+                        <div class="news-tab-content__item js-tab-target" id="tab02">
+                            <ul class="news-list"  data-aos="fade-up" data-aos-duration="2000">
+                                <li class="news-item">
+                                    <a href="#!" class="news-item-link">
+                                        <div class="news-item-img">
+                                            <img src="./img/news02@2x.jpg" alt="">
+                                        </div><!-- /.news-item-img -->
+                                        <div class="news-item-body">
+                                            <time datetime="2020-12-24">2020.12.24</time>
+                                            <h3 class="news-item-text">
+                                                年末最後の営業日のお知らせ
+                                            </h3><!-- /.news-item-text -->
+                                        </div><!-- /.news-item-body -->
+                                    </a><!-- /.news-item-link -->
+                                </li><!-- /.news-item -->
+                                <li class="news-item">
+                                    <a href="#!" class="news-item-link">
+                                        <div class="news-item-img">
+                                            <img src="./img/news01@2x.jpg" alt="">
+                                        </div><!-- /.news-item-img -->
+                                        <div class="news-item-body">
+                                            <time datetime="2020-12-24">2020.12.24</time>
+                                            <h3 class="news-item-text">
+                                                年末最後の営業日は27日になります。
+                                            </h3><!-- /.news-item-text -->
+                                        </div><!-- /.news-item-body -->
+                                    </a><!-- /.news-item-link -->
+                                </li><!-- /.news-item -->
+                                <li class="news-item">
+                                    <a href="#!" class="news-item-link">
+                                        <div class="news-item-img">
+                                            <img src="./img/news01@2x.jpg" alt="">
+                                        </div><!-- /.news-item-img -->
+                                        <div class="news-item-body">
+                                            <time datetime="2020-12-11">2020.12.11</time>
+                                            <h3 class="news-item-text">
+                                                12.21は臨時休業とさせていただきますので、よろしく お願いします。
+                                            </h3><!-- /.news-item-text -->
+                                        </div><!-- /.news-item-body -->
+                                    </a><!-- /.news-item-link -->
+                                </li><!-- /.news-item -->
+                                <li class="news-item">
+                                    <a href="#!" class="news-item-link">
+                                        <div class="news-item-img">
+                                            <img src="./img/news01@2x.jpg" alt="">
+                                        </div><!-- /.news-item-img -->
+                                        <div class="news-item-body">
+                                            <time datetime="2020-12-1">2020.12.01</time>
+                                            <h3 class="news-item-text">
+                                                和室の改装を行いますため、12.10はお休み させていただきます。
+                                            </h3><!-- /.news-item-text -->
+                                        </div><!-- /.news-item-body -->
+                                    </a><!-- /.news-item-link -->
+                                </li><!-- /.news-item -->
+                                <li class="news-item">
+                                    <a href="#!" class="news-item-link">
+                                        <div class="news-item-img">
+                                            <img src="./img/news02@2x.jpg" alt="">
+                                        </div><!-- /.news-item-img -->
+                                        <div class="news-item-body">
+                                            <time datetime="2020-12-24">2020.12.24</time>
+                                            <h3 class="news-item-text">
+                                                年末最後の営業日のお知らせ
+                                            </h3><!-- /.news-item-text -->
+                                        </div><!-- /.news-item-body -->
+                                    </a><!-- /.news-item-link -->
+                                </li><!-- /.news-item -->
+                                <li class="news-item">
+                                    <a href="#!" class="news-item-link">
+                                        <div class="news-item-img">
+                                            <img src="./img/news02@2x.jpg" alt="">
+                                        </div><!-- /.news-item-img -->
+                                        <div class="news-item-body">
+                                            <time datetime="2020-12-24">2020.12.24</time>
+                                            <h3 class="news-item-text">
+                                                年末最後の営業日のお知らせ
+                                            </h3><!-- /.news-item-text -->
+                                        </div><!-- /.news-item-body -->
+                                    </a><!-- /.news-item-link -->
+                                </li><!-- /.news-item -->
+                            </ul><!-- /.news-list -->
+                        </div><!-- .tab-content__item -->
+                    </div><!-- .tab-content -->
+                    
+                </div><!-- /.inner -->
+            </section><!-- /.news -->
+            <section class="access">
+                <div class="inner">
+                    <div class="section-head-wrap access-head-wrap">
+                        <div class="section-head-img">
+                            <img src="./img/logo02@2x.png" alt="">
+                        </div><!-- /.section-head-img -->
+                        <h2 class="section-head">アクセス</h2><!-- /.section-head -->
+                    </div><!-- /.section-head-wrap -->
+                    <div class="access-container">
+                        <div class="access-img"  data-aos="fade-up" data-aos-duration="2000">
+                            <img src="./img/acess@2x.jpg" alt="">
+                        </div><!-- /.access-img -->
+                        <div class="access-info-container">
+
+                            <dl class="access-info-list"  data-aos="fade-up" data-aos-duration="2000">
+                                <div class="access-info-item">
+                                    <dt class="access-info-title">住所</dt>
+                                    <dd class="access-info-desc">
+                                        〒000-0000 <br>
+                                        山形県鶴岡市xxxxxxxxxx</dd>
+                                </div>
+                                <div class="access-info-item">
+                                    <dt class="access-info-title">TEL/FAX</dt>
+                                    <dd class="access-info-desc">000-0000-0000/00-0000-0000</dd>
+                                </div>
+                                <div class="access-info-item">
+                                    <dt class="access-info-title">営業時間</dt>
+                                    <dd class="access-info-desc">14:00-23:00</dd>
+                                </div>
+                            </dl>
+                            <p class="access-note"  data-aos="fade-up" data-aos-duration="2000">
+                                ＊4名以上のご予約の場合は、最寄り駅の「鶴岡駅」より送迎が可能ですので、
+                                ご連絡ください。
+                            </p><!-- /.access-note -->
+                        </div><!-- /.access-info-container -->
+                    </div><!-- /.access-container -->
+                    <div class="access-map-wrap"  data-aos="fade-up" data-aos-duration="2000">
+                        <div class="access-map">
+                            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d24933.858417389387!2d139.5810508551066!3d38.63203904517947!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x5f8c6dbd6c03ae15%3A0x10bc5da99bc816ef!2z44CSOTk5LTcyMDUg5bGx5b2i55yM6ba05bKh5biC5rip5rW3!5e0!3m2!1sja!2sjp!4v1621542326328!5m2!1sja!2sjp" width="600" height="450" style="border: 0" allowfullscreen="" loading="lazy"></iframe>
+                        </div><!-- /.access-map -->
+                    </div><!-- /.access-map-wrap -->
+                </div><!-- /.inner -->
+            </section><!-- /.access -->
+        </main>
+        <!-- /.main -->
+        <footer class="footer">
+            <div class="footer-top">
+                <div class="inner footer-top-inner">
+                    <nav class="footer-nav">
+                        <ul class="footer-nav-list">
+                            <li class="footer-nav-item">
+                                <a href="./onsen/index.html" class="footer-nav-item-link">
+                                    温 泉
+                                </a><!-- /.footer-nav-item-link -->
+                            </li><!-- /.footer-nav-item -->
+                            <li class="footer-nav-item">
+                                <a href="./menu/index.html" class="footer-nav-item-link">
+                                    お 料 理
+                                </a><!-- /.footer-nav-item-link -->
+                            </li><!-- /.footer-nav-item -->
+                            <li class="footer-nav-item">
+                                <a href="./room/index.html" class="footer-nav-item-link">
+                                    お 部 屋
+                                </a><!-- /.footer-nav-item-link -->
+                            </li><!-- /.footer-nav-item -->
+                        </ul><!-- /.footer-nav-list -->
+                    </nav><!-- /.footer-nav -->
+                    <div class="footer-logo">
+                        <a href="#" class="footer-logo-link">
+                            <img src="./img/footer-logo@2x.png" alt="石井花壇">
+                        </a><!-- /.footer-logo-link -->
+                    </div><!-- /.footer-logo -->
+                    <div class="footer-info-top">
+                        <p class="footer-info">〒000-0000</p><!-- /.footer-info -->
+                        <p class="footer-info">山形県鶴岡市xxxxxxxxxx</p><!-- /.footer-info -->
+                    </div><!-- /.footer-info-container -->
+                    <div class="footer-info-bottom">
+                        <p class="footer-info">TEL.000-0000-0000</p><!-- /.footer-info -->
+                        <p class="footer-info">FAX.00-0000-0000</p><!-- /.footer-info -->
+                    </div><!-- /.footer-info-bottom -->
+                </div><!-- /.footer-top-inner -->
+            </div><!-- /.footer-top -->
+            <div class="footer-bottom">
+                <p class="footer-copy-right">
+                    <small>Copyright &copy; 石井花壇 All Rights Reserved.</small>
+                </p><!-- /.footer-copy-right -->
+            </div><!-- /.footer-bottom -->
+        </footer><!-- /.footer -->
+
+
+    <!-- jquery -->
+    <script src="https://code.jquery.com/jquery-3.6.0.js" integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk=" crossorigin="anonymous"></script>
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/flatpickr"></script>
+    <script src="https://cdn.jsdelivr.net/npm/flatpickr/dist/l10n/ja.js"></script>
+    <script src="./js/script.js"></script>
+    </body>
+</html>
